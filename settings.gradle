@@ -1,0 +1,2 @@
+include ':app', ':ame'
+rootProject.name='AMEDemo'

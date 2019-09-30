@@ -1,0 +1,34 @@
+html {
+    height: 100%;
+}
+
+/* body {
+    overflow: scroll;
+    display: table;
+    table-layout: fixed; 
+    width: 100%;
+    min-height: 100%;
+    margin:0;
+} */
+
+/* #vditor {
+    display: table-cell;
+    outline: 0px solid transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+
+.vditor {
+    border-radius: 0;
+    border: 0 solid #000;
+}
+
+.vditor-toolbar {
+    border-bottom: 0 solid #000;
+    height: 0;
+}
+
+.vditor-textarea {
+    background-color: #fff;
+}
