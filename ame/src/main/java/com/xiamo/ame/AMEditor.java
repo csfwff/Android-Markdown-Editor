@@ -130,8 +130,93 @@ public class AMEditor extends WebView {
         evaluateJavascript(script,null);
     }
 
+    public void undo(){
+        evaluateJavascript("javascript:ameUndo()", null);
+    }
+
+    public void redo(){
+        evaluateJavascript("javascript:ameRedo()", null);
+    }
+
+
+    public void setBold(){
+        evaluateJavascript("javascript:ameSetBold()", null);
+    }
+
+    public void setH1(){
+        evaluateJavascript("javascript:ameSetH1()", null);
+    }
+
+    public void setH2(){
+        evaluateJavascript("javascript:ameSetH2()", null);
+    }
+
+    public void setH3(){
+        evaluateJavascript("javascript:ameSetH3()", null);
+    }
+
+    public void setH4(){
+        evaluateJavascript("javascript:ameSetH4()", null);
+    }
+
+    public void setH5(){
+        evaluateJavascript("javascript:ameSetH5()", null);
+    }
+
+    public void setH6(){
+        evaluateJavascript("javascript:ameSetH6()", null);
+    }
+
+    public void italic(){
+        evaluateJavascript("javascript:ameSetItalic()", null);
+    }
+
+    public void setStrike(){
+        evaluateJavascript("javascript:ameSetStrike()", null);
+    }
+
+    public void setLine(){
+        evaluateJavascript("javascript:ameSetLine()", null);
+    }
+
+    public void setQuote(){
+        evaluateJavascript("javascript:ameSetQuote()", null);
+    }
+
+    public void setList(){
+        evaluateJavascript("javascript:ameSetList()", null);
+    }
+
+    public void setOrdered(){
+        evaluateJavascript("javascript:ameSetOrdered()", null);
+    }
+
+    public void setCheck(){
+        evaluateJavascript("javascript:ameSetCheck()", null);
+    }
+
+    public void setCode(){
+        evaluateJavascript("javascript:ameSetCode()", null);
+    }
+
+    public void setInlineCode(){
+        evaluateJavascript("javascript:ameSetInlineCode()", null);
+    }
+
+    public void setLink(){
+        evaluateJavascript("javascript:ameSetLink()", null);
+    }
+
+    public void setTable(){
+        evaluateJavascript("javascript:ameSetTable()", null);
+    }
+
+
+
+
+
     public enum PreviewMode {
-        both,editor,preview;
+        both,editor,preview
     }
 
 

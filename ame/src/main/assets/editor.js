@@ -9,10 +9,10 @@ const vditor = new Vditor('vditor', {
   //         'j': 'https://unpkg.com/vditor@1.3.1/dist/images/emoji/j.png',
   //     },
   // },
-  toolbar:['preview'],
+  toolbar: ['preview'],
   tab: '\t',
-  preview:{
-    mode:'editor'
+  preview: {
+    mode: 'editor'
   },
   // upload: {
   //     accept: 'image/*,.wav',
@@ -105,7 +105,7 @@ ameEnableCache = () => {
 ameSetPreviewMode = (mode) => {
   //alert(mode);
   console.log(mode);
-  
+
   vditor.setPreviewMode(mode)
 }
 
@@ -113,6 +113,99 @@ ameSetPreviewMode = (mode) => {
 ameTip = (text, time) => {
   vditor.tip(text, time)
 }
+
+ameUndo = () => {
+  vditor.undo()
+}
+
+ameRedo = () => {
+  vditor.redo()
+}
+
+ameSetBold = () => {
+  vditor.setBold()
+}
+
+ameSetH1 = () => {
+  vditor.setH1()
+}
+
+ameSetH2 = () => {
+  vditor.setH2()
+}
+
+ameSetH3 = () => {
+  vditor.setH3()
+}
+
+ameSetH4 = () => {
+  vditor.setH4()
+}
+
+ameSetH5 = () => {
+  vditor.setH5()
+}
+
+ameSetH6 = () => {
+  vditor.setH6()
+}
+
+ameSetItalic = () => {
+  vditor.setItalic()
+}
+
+ameSetStrike = () => {
+  vditor.setStrike()
+}
+
+ameSetLine = () => {
+  vditor.setLine()
+}
+
+ameSetQuote = () => {
+  vditor.setQuote()
+}
+
+ameSetList = () => {
+  vditor.setList()
+}
+
+ameSetOrdered = () => {
+  vditor.setOrdered()
+}
+
+ameSetCheck = () => {
+  vditor.setCheck()
+}
+
+ameSetCode = () => {
+  vditor.setCode()
+}
+
+ameSetInlineCode = () => {
+  vditor.setInlineCode()
+}
+
+ameSetLink = () => {
+  vditor.setLink()
+}
+
+ameSetTable = () => {
+  vditor.setTable()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
