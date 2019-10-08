@@ -3,6 +3,7 @@
 # Android-Markdown-Editor
 
 墨璃编辑器(ame) --- Android Markdown 编辑器，基于[b3log/vditor](https://github.com/b3log/vditor)
+
 github: https://github.com/csfwff/Android-Markdown-Editor
 
 ### 背景
@@ -40,7 +41,7 @@ github: https://github.com/csfwff/Android-Markdown-Editor
 
 ||说明|
 |---|---|
-|&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;undo()&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;撤销&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|
+|undo()|撤销|
 |redo()|重做|
 |setBold()|加粗|
 |setH1()|一级标题|
