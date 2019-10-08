@@ -167,7 +167,7 @@ public class AMEditor extends WebView {
         evaluateJavascript("javascript:ameSetH6()", null);
     }
 
-    public void italic(){
+    public void setItalic(){
         evaluateJavascript("javascript:ameSetItalic()", null);
     }
 
