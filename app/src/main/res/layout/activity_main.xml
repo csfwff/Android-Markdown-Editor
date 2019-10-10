@@ -14,6 +14,90 @@
         android:layout_height="200dp"
         />
 
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/bold_img"
+                android:src="@mipmap/tool_bold"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/italic_img"
+                android:src="@mipmap/tool_italic"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/strike_img"
+                android:src="@mipmap/tool_strike"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/quote_img"
+                android:src="@mipmap/tool_quote"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/line_img"
+                android:src="@mipmap/tool_line"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/h1_img"
+                android:src="@mipmap/tool_h1"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/h2_img"
+                android:src="@mipmap/tool_h2"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/h3_img"
+                android:src="@mipmap/tool_h3"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/h4_img"
+                android:src="@mipmap/tool_h4"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/h5_img"
+                android:src="@mipmap/tool_h5"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/h6_img"
+                android:src="@mipmap/tool_h6"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/link_img"
+                android:src="@mipmap/tool_link"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/list_img"
+                android:src="@mipmap/tool_list"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/ordered_img"
+                android:src="@mipmap/tool_ordered"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/code_img"
+                android:src="@mipmap/tool_code"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/inlinecode_img"
+                android:src="@mipmap/tool_inlinecode"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/undo_img"
+                android:src="@mipmap/tool_undo"/>
+            <ImageView
+                style="@style/ToolItem"
+                android:id="@+id/redo_img"
+                android:src="@mipmap/tool_redo"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -23,6 +107,7 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:text="聚焦失焦："

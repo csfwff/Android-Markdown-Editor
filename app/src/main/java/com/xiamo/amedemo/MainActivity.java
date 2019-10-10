@@ -15,12 +15,32 @@ import com.xiamo.ame.AMEditor;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private AMEditor amEditor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        amEditor = (AMEditor)findViewById(R.id.ameditor);
+        amEditor = (AMEditor) findViewById(R.id.ameditor);
+
+        findViewById(R.id.bold_img).setOnClickListener(this);
+        findViewById(R.id.italic_img).setOnClickListener(this);
+        findViewById(R.id.strike_img).setOnClickListener(this);
+        findViewById(R.id.quote_img).setOnClickListener(this);
+        findViewById(R.id.line_img).setOnClickListener(this);
+        findViewById(R.id.h1_img).setOnClickListener(this);
+        findViewById(R.id.h2_img).setOnClickListener(this);
+        findViewById(R.id.h3_img).setOnClickListener(this);
+        findViewById(R.id.h4_img).setOnClickListener(this);
+        findViewById(R.id.h5_img).setOnClickListener(this);
+        findViewById(R.id.h6_img).setOnClickListener(this);
+        findViewById(R.id.link_img).setOnClickListener(this);
+        findViewById(R.id.list_img).setOnClickListener(this);
+        findViewById(R.id.ordered_img).setOnClickListener(this);
+        findViewById(R.id.code_img).setOnClickListener(this);
+        findViewById(R.id.inlinecode_img).setOnClickListener(this);
+        findViewById(R.id.undo_img).setOnClickListener(this);
+        findViewById(R.id.redo_img).setOnClickListener(this);
 
         findViewById(R.id.focus_btn).setOnClickListener(this);
         findViewById(R.id.blur_btn).setOnClickListener(this);
@@ -36,12 +56,65 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.updateValue_btn).setOnClickListener(this);
 
 
-
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
+            case R.id.bold_img: //加粗
+                amEditor.setBold();
+                break;
+            case R.id.italic_img: //斜体
+                amEditor.setItalic();
+                break;
+            case R.id.strike_img: //删除线
+                amEditor.setStrike();
+                break;
+            case R.id.quote_img://引用
+                amEditor.setQuote();
+                break;
+            case R.id.line_img: //分割线
+                amEditor.setLine();
+                break;
+            case R.id.h1_img://H1
+                amEditor.setH1();
+                break;
+            case R.id.h2_img://H2
+                amEditor.setH2();
+                break;
+            case R.id.h3_img://H3
+                amEditor.setH3();
+                break;
+            case R.id.h4_img://H4
+                amEditor.setH4();
+                break;
+            case R.id.h5_img://H5
+                amEditor.setH5();
+                break;
+            case R.id.h6_img://H6
+                amEditor.setH6();
+                break;
+            case R.id.link_img: //链接
+                amEditor.setLink();
+                break;
+            case R.id.list_img: //列表
+                amEditor.setList();
+                break;
+            case R.id.ordered_img://有序
+                amEditor.setOrdered();
+                break;
+            case R.id.code_img: //代码
+                amEditor.setCode();
+                break;
+            case R.id.inlinecode_img://行内代码
+                amEditor.setInlineCode();
+                break;
+            case R.id.undo_img://撤销
+                amEditor.undo();
+                break;
+            case R.id.redo_img://重做
+                amEditor.redo();
+                break;
             case R.id.focus_btn:  //聚焦
                 amEditor.focus();
                 break;
@@ -94,9 +167,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void goResult(String s){
-        Intent intent = new Intent(MainActivity.this,ResultActivity.class);
-        intent.putExtra("result",s);
+    public void goResult(String s) {
+        Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+        intent.putExtra("result", s);
         startActivity(intent);
     }
 }
