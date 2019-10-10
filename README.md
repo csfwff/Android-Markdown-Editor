@@ -85,7 +85,7 @@ amEditor.setPreviewMode(AMEditor.PreviewMode.preview);
 ```
 
 ### 截图预览
-<img src=https://raw.githubusercontent.com/csfwff/Android-Markdown-Editor/03118b63cc9502b387fa453ed9faea0c1d40c5a6/screenshot/1.jpg width=200><img src=https://raw.githubusercontent.com/csfwff/Android-Markdown-Editor/03118b63cc9502b387fa453ed9faea0c1d40c5a6/screenshot/2.jpg width=200><img src=https://raw.githubusercontent.com/csfwff/Android-Markdown-Editor/03118b63cc9502b387fa453ed9faea0c1d40c5a6/screenshot/3.jpg width=200>
+<img src=https://raw.githubusercontent.com/csfwff/Android-Markdown-Editor/03118b63cc9502b387fa453ed9faea0c1d40c5a6/screenshot/1.jpg width=200>  <img src=https://raw.githubusercontent.com/csfwff/Android-Markdown-Editor/03118b63cc9502b387fa453ed9faea0c1d40c5a6/screenshot/2.jpg width=200>  <img src=https://raw.githubusercontent.com/csfwff/Android-Markdown-Editor/03118b63cc9502b387fa453ed9faea0c1d40c5a6/screenshot/3.jpg width=200>
 
 
 
