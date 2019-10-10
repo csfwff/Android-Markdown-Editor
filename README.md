@@ -84,6 +84,15 @@ amEditor.setPreviewMode(AMEditor.PreviewMode.preview);
 ...
 ```
 
+### 截图预览
+![1](https://raw.githubusercontent.com/csfwff/Android-Markdown-Editor/03118b63cc9502b387fa453ed9faea0c1d40c5a6/screenshot/1.jpg)
+
+![2](https://raw.githubusercontent.com/csfwff/Android-Markdown-Editor/03118b63cc9502b387fa453ed9faea0c1d40c5a6/screenshot/2.jpg)
+
+![3](https://raw.githubusercontent.com/csfwff/Android-Markdown-Editor/03118b63cc9502b387fa453ed9faea0c1d40c5a6/screenshot/3.jpg)
+
+
+
 ### 鸣谢
 * [Vditor](https://github.com/b3log/vditor)： 浏览器端的 Markdown 编辑器
 
