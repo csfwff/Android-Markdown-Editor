@@ -13,6 +13,8 @@ import android.webkit.WebViewClient;
 public class AMEditor extends WebView {
     private static final String TAG = "----AME-----";
     private static final String SETUP_HTML = "file:///android_asset/editor.html";
+    private OnGetHtmlResult onGetHtmlResult;
+    private OnHtml2mdResult onHtml2mdResult;
 
 
     public AMEditor(Context context) {
@@ -35,6 +37,7 @@ public class AMEditor extends WebView {
         getSettings().setDatabaseEnabled(true);
         setWebChromeClient(new WebChromeClient());
         setWebViewClient(new WebViewClient());
+        addJavascriptInterface(new JsInterface(this),"ameBridge");
         loadUrl(SETUP_HTML);
 
     }
@@ -211,9 +214,40 @@ public class AMEditor extends WebView {
         evaluateJavascript("javascript:ameSetTable()", null);
     }
 
+    public void getHtml(OnGetHtmlResult onGetHtmlResult){
+        this.onGetHtmlResult = onGetHtmlResult;
+        evaluateJavascript("javascript:ameGetHtml()", null);
+    }
 
+    public void html2md(String value,OnHtml2mdResult onHtml2mdResult){
+        this.onHtml2mdResult = onHtml2mdResult;
+        String script = "javascript:ameHtml2md('" + value + "')";
+        evaluateJavascript(script,null);
+    }
 
+//    public void setOnGetHtmlResult(OnGetHtmlResult onGetHtmlResult){
+//        this.onGetHtmlResult = onGetHtmlResult;
+//    }
 
+    protected void getHtmlFinished(String result){
+        if(this.onGetHtmlResult!=null){
+            this.onGetHtmlResult.onGetHtmlResult(result);
+        }
+    }
+
+    protected void html2mdFinished(String result){
+        if(this.onHtml2mdResult!=null){
+            this.onHtml2mdResult.onHtml2mdResult(result);
+        }
+    }
+
+    public interface OnGetHtmlResult{
+        void onGetHtmlResult(String result);
+    }
+
+    public interface OnHtml2mdResult{
+        void onHtml2mdResult(String result);
+    }
 
     public enum PreviewMode {
         both,editor,preview

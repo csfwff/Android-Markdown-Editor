@@ -17,7 +17,7 @@ github: https://github.com/csfwff/Android-Markdown-Editor
 ||说明|
 |---|---|
 |getValue(ValueCallback&lt;String&gt; callback)|获取编辑器内容|
-|getHTML()|获取预览区内容。（施工中）|
+|getHTML()|获取预览区内容。|
 |insertValue(String value)|在焦点处插入内容|
 |focus()|聚焦到编辑器|
 |blur()|让编辑器失焦|
@@ -32,7 +32,7 @@ github: https://github.com/csfwff/Android-Markdown-Editor
 |clearCache()|清除缓存|
 |disabledCache()|禁用缓存|
 |enableCache()|启用缓存|
-|html2md(value: string)|HTML 转 md。（施工中）|
+|html2md(value: string)|HTML 转 md。|
 |tip(String text,int time)|消息提示。time 为 0 将一直显示|
 |setPreviewMode(PreviewMode previewMode)|设置预览模式。PreviewMode.both, PreviewMode.editor, PreviewMode.preview|
 

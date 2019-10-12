@@ -194,6 +194,18 @@ ameSetTable = () => {
   vditor.setTable()
 }
 
+ameGetHtml = () => {
+  vditor.getHTML().then(res => {
+    ameBridge.getHtml(res)
+  })
+}
+
+ameHtml2md = (value) => {
+  vditor.html2md(value).then(res => {
+    ameBridge.html2md(res)
+  })
+}
+
 
 
 

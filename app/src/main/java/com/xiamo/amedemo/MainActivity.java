@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.getSelection_btn).setOnClickListener(this);
         findViewById(R.id.setValue_btn).setOnClickListener(this);
         findViewById(R.id.updateValue_btn).setOnClickListener(this);
+        findViewById(R.id.getHtml_btn).setOnClickListener(this);
+        findViewById(R.id.html2md_btn).setOnClickListener(this);
 
 
     }
@@ -160,6 +162,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.updateValue_btn:// 更新选中内容
                 amEditor.updateValue("这是更新选中内容");
+                break;
+            case R.id.getHtml_btn://获取html
+                amEditor.getHtml(new AMEditor.OnGetHtmlResult() {
+                    @Override
+                    public void onGetHtmlResult(String result) {
+                        goResult(result);
+                    }
+                });
+            case R.id.html2md_btn://html转md
+                amEditor.html2md("<h1>这是测试转换内容</h1>", new AMEditor.OnHtml2mdResult() {
+                    @Override
+                    public void onHtml2mdResult(String result) {
+                        goResult(result);
+                    }
+                });
                 break;
 
 

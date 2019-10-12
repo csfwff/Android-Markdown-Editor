@@ -226,6 +226,27 @@
                     />
 
             </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Markdown操作："
+                android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/getHtml_btn"
+                android:text="getHtml"
+                android:layout_height="wrap_content"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:id="@+id/html2md_btn"
+                android:text="html2md"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
