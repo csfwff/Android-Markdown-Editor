@@ -3,6 +3,7 @@ package com.xiamo.ame;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 
+@Deprecated
 public class JsInterface {
 
     AMEditor amEditor;

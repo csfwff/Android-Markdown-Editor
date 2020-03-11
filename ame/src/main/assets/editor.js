@@ -1,5 +1,5 @@
 const vditor = new Vditor('vditor', {
-  mode: 'markdown-show',
+  mode: 'wysiwyg-show',
   height: 'auto',
   // hint: {
   //     emojiPath: 'https://cdn.jsdelivr.net/npm/vditor@1.8.3/dist/images/emoji',
@@ -11,6 +11,7 @@ const vditor = new Vditor('vditor', {
   // },
   toolbar: ['preview'],
   tab: '\t',
+  hideToolbar: 'true',
   preview: {
     mode: 'editor'
   },
@@ -32,8 +33,10 @@ ameGetValue = () => {
 }
 
 //在焦点处插入内容
-ameInsertValue = (value) => {
-  vditor.insertValue(value)
+ameInsertValue = (value,render) => {
+  console.log(render);
+  
+  vditor.insertValue(value,render=="true"?true:false)
 }
 
 //聚焦到编辑器
@@ -107,6 +110,11 @@ ameSetPreviewMode = (mode) => {
   console.log(mode);
 
   vditor.setPreviewMode(mode)
+}
+
+//设置模式
+ameSetWysiwyg = (mode) => {
+  vditor.setWysiwyg(mode)
 }
 
 //消息提示
@@ -195,37 +203,24 @@ ameSetTable = () => {
 }
 
 ameGetHtml = () => {
-  vditor.getHTML().then(res => {
-    ameBridge.getHtml(res)
-  })
+  // console.log(vditor.getHTML());
+
+  // let str = vditor.getHTML();
+
+  // let str1 = str.replace(new RegExp("\\u003C","gm"),"<")
+
+  // return str1
+  return vditor.getHTML()
+  // vditor.getHTML().then(res => {
+  //   ameBridge.getHtml(res)
+  // })
 }
 
 ameHtml2md = (value) => {
-  vditor.html2md(value).then(res => {
-    ameBridge.html2md(res)
-  })
+  return vditor.html2md(value)
+  // vditor.html2md(value).then(res => {
+  //   ameBridge.html2md(res)
+  // })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

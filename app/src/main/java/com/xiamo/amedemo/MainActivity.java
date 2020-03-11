@@ -1,16 +1,16 @@
 package com.xiamo.amedemo;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
 import android.view.View;
 import android.webkit.ValueCallback;
-import android.widget.Button;
 
 import com.xiamo.ame.AMEditor;
+
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -56,6 +56,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.updateValue_btn).setOnClickListener(this);
         findViewById(R.id.getHtml_btn).setOnClickListener(this);
         findViewById(R.id.html2md_btn).setOnClickListener(this);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                amEditor.setMode(AMEditor.Mode.markdown);
+            }
+        },100);
 
 
     }
@@ -133,12 +140,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 amEditor.getValue(new ValueCallback<String>() {
                     @Override
                     public void onReceiveValue(String s) {
-                        goResult(s);
+                            goResult(s);
                     }
                 });
                 break;
             case R.id.insertValue_btn://插入内容
-                amEditor.insertValue("这是在焦点处插入内容");
+                amEditor.insertValue("这是在焦点处插入内容",false);
                 break;
             case R.id.editor_btn: //设置预览模式。mode: 'both', 'editor', 'preview
                 amEditor.setPreviewMode(AMEditor.PreviewMode.editor);
@@ -164,19 +171,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 amEditor.updateValue("这是更新选中内容");
                 break;
             case R.id.getHtml_btn://获取html
-                amEditor.getHtml(new AMEditor.OnGetHtmlResult() {
+
+                amEditor.getHtml(new ValueCallback<String>() {
                     @Override
-                    public void onGetHtmlResult(String result) {
-                        goResult(result);
+                    public void onReceiveValue(String s) {
+                        //需要将“\u003C”替换成“<”
+                        String s1 = s.replaceAll("\\\\u003C","<");
+                        goResult(s1);
                     }
                 });
+//                amEditor.getHtml(new AMEditor.OnGetHtmlResult() {
+//                    @Override
+//                    public void onGetHtmlResult(String result) {
+//                        goResult(result);
+//                    }
+//                });
+                break;
             case R.id.html2md_btn://html转md
-                amEditor.html2md("<h1>这是测试转换内容</h1>", new AMEditor.OnHtml2mdResult() {
+                amEditor.html2md("<h1>这是测试转换内容</h1>",new ValueCallback<String>() {
                     @Override
-                    public void onHtml2mdResult(String result) {
-                        goResult(result);
+                    public void onReceiveValue(String s) {
+                        goResult(s);
                     }
                 });
+//                amEditor.html2md("<h1>这是测试转换内容</h1>", new AMEditor.OnHtml2mdResult() {
+//                    @Override
+//                    public void onHtml2mdResult(String result) {
+//                        goResult(result);
+//                    }
+//                });
                 break;
 
 
@@ -189,4 +212,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("result", s);
         startActivity(intent);
     }
-}
+
+
+    }

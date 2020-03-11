@@ -2,6 +2,11 @@ html {
     height: 100%;
 }
 
+body {
+    height: 100%;
+    display: flex;
+}
+
 /* body {
     overflow: scroll;
     display: table;
@@ -22,6 +27,7 @@ html {
 .vditor {
     border-radius: 0;
     border: 0 solid #000;
+    flex: 1;
 }
 
 .vditor-toolbar {

@@ -31,10 +31,12 @@ public class AMEditor extends WebView {
         Log.e(TAG, "-------");
         setVerticalScrollBarEnabled(false);
         setHorizontalScrollBarEnabled(false);
-        getSettings().setJavaScriptEnabled(true);
-        getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-        getSettings().setDomStorageEnabled(true);
-        getSettings().setDatabaseEnabled(true);
+        WebSettings settings = getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setCacheMode(WebSettings.LOAD_DEFAULT);
+        settings.setDomStorageEnabled(true);
+        settings.setDatabaseEnabled(true);
+        settings.setAllowFileAccessFromFileURLs(true);
         setWebChromeClient(new WebChromeClient());
         setWebViewClient(new WebViewClient());
         addJavascriptInterface(new JsInterface(this),"ameBridge");
@@ -48,8 +50,8 @@ public class AMEditor extends WebView {
     }
 
     //在焦点处插入内容
-    public void insertValue(String value) {
-        String script = "javascript:ameInsertValue('" + value + "')";
+    public void insertValue(String value, boolean render) {
+        String script = "javascript:ameInsertValue('" + value + "','"+render+"')";
         evaluateJavascript(script, null);
     }
 
@@ -125,6 +127,11 @@ public class AMEditor extends WebView {
     public void setPreviewMode(PreviewMode previewMode){
         Log.e(TAG, "setPreviewMode: "+ previewMode);
         evaluateJavascript("javascript:ameSetPreviewMode('"+ previewMode+"')", null);
+    }
+
+    //设置模式
+    public void setMode(Mode mode){
+        evaluateJavascript("javascript:ameSetWysiwyg('"+ mode+"')", null);
     }
 
     //消息提示
@@ -214,11 +221,23 @@ public class AMEditor extends WebView {
         evaluateJavascript("javascript:ameSetTable()", null);
     }
 
+    public void getHtml(ValueCallback<String> callback){
+        evaluateJavascript("javascript:ameGetHtml()", callback);
+    }
+
+    public void html2md(String value,ValueCallback<String> callback){
+        String script = "javascript:ameHtml2md('" + value + "')";
+        evaluateJavascript(script,callback);
+    }
+
+
+    @Deprecated
     public void getHtml(OnGetHtmlResult onGetHtmlResult){
         this.onGetHtmlResult = onGetHtmlResult;
         evaluateJavascript("javascript:ameGetHtml()", null);
     }
 
+    @Deprecated
     public void html2md(String value,OnHtml2mdResult onHtml2mdResult){
         this.onHtml2mdResult = onHtml2mdResult;
         String script = "javascript:ameHtml2md('" + value + "')";
@@ -241,16 +260,22 @@ public class AMEditor extends WebView {
         }
     }
 
+    @Deprecated
     public interface OnGetHtmlResult{
         void onGetHtmlResult(String result);
     }
 
+    @Deprecated
     public interface OnHtml2mdResult{
         void onHtml2mdResult(String result);
     }
 
     public enum PreviewMode {
         both,editor,preview
+    }
+
+    public enum Mode {
+        wysiwyg,markdown
     }
 
 
