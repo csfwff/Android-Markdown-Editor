@@ -248,12 +248,14 @@ public class AMEditor extends WebView {
 //        this.onGetHtmlResult = onGetHtmlResult;
 //    }
 
+    @Deprecated
     protected void getHtmlFinished(String result){
         if(this.onGetHtmlResult!=null){
             this.onGetHtmlResult.onGetHtmlResult(result);
         }
     }
 
+    @Deprecated
     protected void html2mdFinished(String result){
         if(this.onHtml2mdResult!=null){
             this.onHtml2mdResult.onHtml2mdResult(result);
