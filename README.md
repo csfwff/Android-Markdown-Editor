@@ -44,7 +44,7 @@ github: https://github.com/csfwff/Android-Markdown-Editor
 注：
 1. `getHTML`返回的string会将`<`转义成`\u003C`，自行查找替换即可
 2. `setPreviewMode`仅在markdown模式下有效
-~~3. wysiwyg下模式下`insertValue`渲染的时候会有部分标记未能联系上下文，未能正确渲染，可以采用插入的时候不渲染，换行后删除，即可正确渲染，参考[这里](https://github.com/Vanessa219/vditor/issues/218)~~
+3. ~~wysiwyg下模式下`insertValue`渲染的时候会有部分标记未能联系上下文，未能正确渲染，可以采用插入的时候不渲染，换行后删除，即可正确渲染，参考[这里](https://github.com/Vanessa219/vditor/issues/218)~~
 
 
 此外，为了方便自定义，砍掉了默认的工具栏，只提供方法，按钮怎么摆就是你的事了
