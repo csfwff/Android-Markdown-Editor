@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.ValueCallback;
 
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Markdown模式");
 
         amEditor = (AMEditor) findViewById(R.id.ameditor);
 
@@ -65,8 +69,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         },100);
 
 
+
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                    finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -204,6 +218,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         }
+
+
     }
 
 

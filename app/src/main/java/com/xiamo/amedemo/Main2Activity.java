@@ -3,6 +3,7 @@ package com.xiamo.amedemo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -18,6 +19,10 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("所见即所得模式");
+
         amEditor = (AMEditor) findViewById(R.id.ameditor);
 
         findViewById(R.id.btn_0).setOnClickListener(this);
@@ -84,5 +89,15 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 amEditor.insertValue(")",isRender);
                 break;
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

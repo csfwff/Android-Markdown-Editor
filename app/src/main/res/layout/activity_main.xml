@@ -11,7 +11,7 @@
     <com.xiamo.ame.AMEditor
         android:id="@+id/ameditor"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="280dp"
         />
 
     <HorizontalScrollView
@@ -120,12 +120,15 @@
                     android:layout_width="wrap_content"
                     android:id="@+id/focus_btn"
                     android:text="focus"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:layout_height="wrap_content"
                     />
                 <Button
                     android:layout_width="wrap_content"
                     android:id="@+id/blur_btn"
                     android:text="blur"
+                    style="@style/Widget.AppCompat.Button.Small"
+
                     android:layout_height="wrap_content"
                     />
             </LinearLayout>
@@ -142,12 +145,14 @@
                     android:layout_width="wrap_content"
                     android:id="@+id/enable_btn"
                     android:text="enable"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:layout_height="wrap_content"
                     />
                 <Button
                     android:layout_width="wrap_content"
                     android:id="@+id/disabled_btn"
                     android:text="disabled"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:layout_height="wrap_content"
                     />
             </LinearLayout>
@@ -164,18 +169,21 @@
                     android:layout_width="wrap_content"
                     android:id="@+id/editor_btn"
                     android:text="editor"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:layout_height="wrap_content"
                     />
                 <Button
                     android:layout_width="wrap_content"
                     android:id="@+id/preview_btn"
                     android:text="preview"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:layout_height="wrap_content"
                     />
                 <Button
                     android:layout_width="wrap_content"
                     android:id="@+id/both_btn"
                     android:text="both"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:layout_height="wrap_content"
                     />
             </LinearLayout>
@@ -192,11 +200,13 @@
                     android:layout_width="wrap_content"
                     android:id="@+id/getValue_btn"
                     android:text="getValue"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:layout_height="wrap_content"
                     />
                 <Button
                     android:layout_width="wrap_content"
                     android:id="@+id/setValue_btn"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:text="setValue"
                     android:layout_height="wrap_content"
                     />
@@ -204,6 +214,7 @@
                     android:layout_width="wrap_content"
                     android:id="@+id/insertValue_btn"
                     android:text="insertValue"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:layout_height="wrap_content"
                     />
             </LinearLayout>
@@ -216,12 +227,14 @@
                     android:layout_width="wrap_content"
                     android:id="@+id/getSelection_btn"
                     android:text="getSelection"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:layout_height="wrap_content"
                     />
                 <Button
                     android:layout_width="wrap_content"
                     android:id="@+id/updateValue_btn"
                     android:text="updateValue"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:layout_height="wrap_content"
                     />
 
@@ -238,12 +251,14 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/getHtml_btn"
                 android:text="getHtml"
+                style="@style/Widget.AppCompat.Button.Small"
                 android:layout_height="wrap_content"
                 />
             <Button
                 android:layout_width="wrap_content"
                 android:id="@+id/html2md_btn"
                 android:text="html2md"
+                style="@style/Widget.AppCompat.Button.Small"
                 android:layout_height="wrap_content"
                 />
         </LinearLayout>
